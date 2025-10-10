@@ -1,0 +1,20 @@
+# Entorno virtual
+venv/
+
+# Variables de entorno
+.env
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos de Python creados por IDEs
+.idea/
+.vscode/
