@@ -53,6 +53,7 @@ C:/Users/Usuario/CiklumRepos/selenium-check-in-out/venv/Scripts/Activate.ps1
      ![Acción 2](images/Action2.png)
    
    - Conditions:
+     
      ![Condiciones](images/Conditions.png)  
    - Settings: Activar "Run task as soon as possible after a scheduled start is missed"
 
