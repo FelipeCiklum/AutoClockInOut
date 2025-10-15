@@ -48,9 +48,12 @@ C:/Users/Usuario/CiklumRepos/selenium-check-in-out/venv/Scripts/Activate.ps1
    - Nombre: clockIn / clockOut  
    - Trigger: Semanal - Lunes a viernes a la hora deseada  
    - Actions:
+     
      ![Acción 1](images/Action1.png)
-     ![Acción 2](images/Action2.png)  
+     ![Acción 2](images/Action2.png)
+   
    - Conditions:
+     
      ![Condiciones](images/Conditions.png)  
    - Settings: Activar "Run task as soon as possible after a scheduled start is missed"
 
