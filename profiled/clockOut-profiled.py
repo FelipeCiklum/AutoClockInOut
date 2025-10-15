@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 import time
 import logging
 from datetime import datetime, timedelta
@@ -39,18 +40,23 @@ oracle_url="https://ialmme.fa.ocs.oraclecloud.com/fscmUI/faces/FuseWelcome"
 options = webdriver.ChromeOptions()
 options.add_argument(f"--user-data-dir={source_profile}")
 options.add_argument(f"--profile-directory={profile}")
-options.add_argument("--headless=new")
+#options.add_argument("--headless=new")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 driver.get(oracle_url)
 
-wait = WebDriverWait(driver, 40) 
+wait = WebDriverWait(driver, 20) 
 
 # Click Company SSO
-logging.info("🔐 Esperando botón 'Company Single Sign-On'...")
-sso_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Company Single Sign-On')]")))
-sso_button.click()
+try:
+    logging.info("🔐 Esperando botón 'Company Single Sign-On'...")
+    sso_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Company Single Sign-On')]")))
+    sso_button.click()
+except TimeoutException:
+    logging.warning("⚙️ Botón 'Company Single Sign-On' no encontrado. Asumimos que ya estamos logueados.")
+except Exception as e:
+    logging.error(f"❌ Error inesperado buscando 'Company Single Sign-On': {e}")
 
 # After login is complete, navigate and clock out
 logging.info("🔐 Esperando botón 'Web Clock'...")
