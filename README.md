@@ -49,6 +49,8 @@ C:/Users/Usuario/CiklumRepos/selenium-check-in-out/venv/Scripts/Activate.ps1
    - Trigger: Semanal - Lunes a viernes a la hora deseada  
    - Actions:
      
+     La primera action taskkill... es opcional, cierra el resto de tareas de chrome.exe para evitar problemas pero no debe ser necesario.
+     
      ![Acción 1](images/Action1.png)
      ![Acción 2](images/Action2.png)
    
