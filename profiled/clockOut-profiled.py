@@ -40,7 +40,7 @@ oracle_url="https://ialmme.fa.ocs.oraclecloud.com/fscmUI/faces/FuseWelcome"
 options = webdriver.ChromeOptions()
 options.add_argument(f"--user-data-dir={source_profile}")
 options.add_argument(f"--profile-directory={profile}")
-#options.add_argument("--headless=new")
+options.add_argument("--headless=new")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
