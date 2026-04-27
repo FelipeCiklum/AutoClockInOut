@@ -50,8 +50,8 @@ wait = WebDriverWait(driver, 20)
 
 # Click Company SSO
 try:
-    logging.info("🔐 Esperando botón 'Company Single Sign-On'...")
-    sso_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Company Single Sign-On')]")))
+    logging.info("🔐 Esperando botón 'Sign in with Google_SSO'...")
+    sso_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(.,'Sign in with Google_SSO') or contains(@aria-labelledby,'Google_SSO') or .//img[@alt='Google_SSO']]")))
     sso_button.click()
 except TimeoutException:
     logging.warning("⚙️ Botón 'Company Single Sign-On' no encontrado. Asumimos que ya estamos logueados.")
